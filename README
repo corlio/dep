@@ -1,4 +1,4 @@
-# $Revision: 2606 $
+# $Revision: 2676 $
 
 This package contains ready to be used third party software for web
 applications.
@@ -27,17 +27,17 @@ Source: http://getbootstrap.com/2.3.2/assets/bootstrap.zip
 DataTables
 ----------
 
-$ cp DataTables-1.10.10/media/js/jquery.dataTables.min.js js/datatables.js
-$ cp DataTables-1.10.10/media/css/jquery.dataTables.css css/datatables.css
+$ cp DataTables-1.10.12/media/js/jquery.dataTables.min.js js/datatables.js
+$ cp DataTables-1.10.12/media/css/jquery.dataTables.css css/datatables.css
 $ perl -pi -e 's{/images/}{/img/}' css/datatables.css
-$ cp DataTables-1.10.10/media/images/*.png img/
+$ cp DataTables-1.10.12/media/images/*.png img/
 
 References:
  - http://datatables.net/
  - http://datatables.net/download/
  - https://github.com/DataTables/DataTables
 
-Source: http://datatables.net/releases/DataTables-1.10.10.zip
+Source: http://datatables.net/releases/DataTables-1.10.12.zip
 
 DataTables+Bootstrap
 --------------------
@@ -72,8 +72,8 @@ Source: http://www.flotcharts.org/downloads/flot-0.8.3.zip
 Jolokia
 -------
 
-$ wget -O js/jolokia.js https://github.com/rhuss/jolokia/releases/download/v1.3.2/jolokia-min.js
-$ wget -O js/jolokia-simple.js https://github.com/rhuss/jolokia/releases/download/v1.3.2/jolokia-simple-min.js
+$ wget -O js/jolokia.js https://github.com/rhuss/jolokia/releases/download/v1.3.3/jolokia-min.js
+$ wget -O js/jolokia-simple.js https://github.com/rhuss/jolokia/releases/download/v1.3.3/jolokia-simple-min.js
 
 References:
  - http://jolokia.org/
@@ -82,7 +82,7 @@ References:
 jQuery
 ------
 
-$ wget -O js/jquery.js http://code.jquery.com/jquery-1.12.3.min.js
+$ wget -O js/jquery.js http://code.jquery.com/jquery-1.12.4.min.js
 
 References:
  - http://jquery.com/
@@ -129,7 +129,7 @@ References:
 Normalize.css
 -------------
 
-$ wget -O css/normalize.css http://necolas.github.com/normalize.css/4.0.0/normalize.css
+$ wget -O css/normalize.css http://necolas.github.com/normalize.css/4.1.1/normalize.css
 
 References:
  - http://necolas.github.io/normalize.css/
