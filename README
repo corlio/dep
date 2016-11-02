@@ -1,4 +1,6 @@
-# $Revision: 2676 $
+                             +-----------------+
+                             | Web Third Party |
+                             +-----------------+
 
 This package contains ready to be used third party software for web
 applications.
@@ -7,22 +9,8 @@ All the JavaScript and CSS files are minified (when available).
 
 Some files have been renamed (compared to source) to improve consistency.
 
-Since some CSS files use images, the "css" and "img" directories must end up
-in the same directory.
-
-Bootstrap
----------
-
-$ cp bootstrap/js/bootstrap.min.js js/bootstrap.js
-$ cp bootstrap/css/bootstrap.min.css css/bootstrap.css
-$ cp bootstrap/css/bootstrap-responsive.min.css css/bootstrap-responsive.css
-$ cp bootstrap/img/*.png img/
-
-References:
- - http://getbootstrap.com/2.3.2/
- - https://github.com/twbs/bootstrap
-
-Source: http://getbootstrap.com/2.3.2/assets/bootstrap.zip
+Since some CSS files use images with relative paths, the "css" and "img"
+directories must end up in the same directory.
 
 DataTables
 ----------
@@ -38,19 +26,6 @@ References:
  - https://github.com/DataTables/DataTables
 
 Source: http://datatables.net/releases/DataTables-1.10.12.zip
-
-DataTables+Bootstrap
---------------------
-
-$ wget -O js/datatables-bootstrap.js http://datatables.net/media/blog/bootstrap_2/DT_bootstrap.js
-(then commented out the "Table initialisation" part)
-$ wget -O css/datatables-bootstrap.css http://datatables.net/media/blog/bootstrap_2/DT_bootstrap.css
-$ perl -pi -e 's{images/}{../img/}' css/datatables-bootstrap.css
-
-References:
- - http://datatables.net/blog/Twitter_Bootstrap_2
-
-Source: downloaded on 2013/08/13.
 
 Flot
 ----
@@ -72,8 +47,8 @@ Source: http://www.flotcharts.org/downloads/flot-0.8.3.zip
 Jolokia
 -------
 
-$ wget -O js/jolokia.js https://github.com/rhuss/jolokia/releases/download/v1.3.3/jolokia-min.js
-$ wget -O js/jolokia-simple.js https://github.com/rhuss/jolokia/releases/download/v1.3.3/jolokia-simple-min.js
+$ wget -O js/jolokia.js https://github.com/rhuss/jolokia/releases/download/v1.3.5/jolokia-min.js
+$ wget -O js/jolokia-simple.js https://github.com/rhuss/jolokia/releases/download/v1.3.5/jolokia-simple-min.js
 
 References:
  - http://jolokia.org/
@@ -104,17 +79,17 @@ References:
 jQuery UI
 ---------
 
-$ cp jquery-ui-1.11.4.custom/jquery-ui.min.js js/jquery-ui.js
-$ cp jquery-ui-1.11.4.custom/jquery-ui.css css/jquery-ui.css
+$ cp jquery-ui-1.12.1.custom/jquery-ui.min.js js/jquery-ui.js
+$ cp jquery-ui-1.12.1.custom/jquery-ui.css css/jquery-ui.css
 $ perl -pi -e 's{images/}{../img/}' css/jquery-ui.css
-$ cp jquery-ui-1.11.4.custom/images/* img/
+$ cp jquery-ui-1.12.1.custom/images/* img/
 
 References:
  - http://jqueryui.com/
  - http://jqueryui.com/download/
  - https://github.com/jquery/jquery-ui
 
-Source: go to the download page, select version (1.11.4), select all
+Source: go to the download page, select version (1.12.1), select all
 components & Smoothness theme, click Download, unzip the result.
 
 jQuery UI Touch Punch
@@ -129,7 +104,7 @@ References:
 Normalize.css
 -------------
 
-$ wget -O css/normalize.css http://necolas.github.com/normalize.css/4.1.1/normalize.css
+$ wget -O css/normalize.css http://necolas.github.com/normalize.css/5.0.0/normalize.css
 
 References:
  - http://necolas.github.io/normalize.css/
