@@ -15,17 +15,17 @@ directories must end up in the same directory.
 DataTables
 ----------
 
-$ cp DataTables-1.10.13/media/js/jquery.dataTables.min.js js/datatables.js
-$ cp DataTables-1.10.13/media/css/jquery.dataTables.css css/datatables.css
+$ cp DataTables-1.10.16/media/js/jquery.dataTables.min.js js/datatables.js
+$ cp DataTables-1.10.16/media/css/jquery.dataTables.css css/datatables.css
 $ perl -pi -e 's{/images/}{/img/}' css/datatables.css
-$ cp DataTables-1.10.13/media/images/*.png img/
+$ cp DataTables-1.10.16/media/images/*.png img/
 
 References:
  - http://datatables.net/
  - http://datatables.net/download/
  - https://github.com/DataTables/DataTables
 
-Source: http://datatables.net/releases/DataTables-1.10.13.zip
+Source: http://datatables.net/releases/DataTables-1.10.16.zip
 
 Flot
 ----
