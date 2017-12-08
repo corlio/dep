@@ -1,6 +1,6 @@
 
 (function(){var _jolokiaConstructorFunc=function($){var DEFAULT_CLIENT_PARAMS={type:"POST",jsonp:false};var GET_AJAX_PARAMS={type:"GET"};var POST_AJAX_PARAMS={type:"POST",processData:false,dataType:"json",contentType:"text/json"};var PROCESSING_PARAMS=["maxDepth","maxCollectionSize","maxObjects","ignoreErrors","canonicalNaming","serializeException","includeStackTrace","ifModifiedSince"];function Jolokia(param){if(!(this instanceof arguments.callee)){return new Jolokia(param);}
-this.CLIENT_VERSION="1.3.5";var jobs=[];var agentOptions={};var pollerIsRunning=false;if(typeof param==="string"){param={url:param};}
+this.CLIENT_VERSION="1.3.7";var jobs=[];var agentOptions={};var pollerIsRunning=false;if(typeof param==="string"){param={url:param};}
 $.extend(agentOptions,DEFAULT_CLIENT_PARAMS,param);this.request=function(request,params){var opts=$.extend({},agentOptions,params);assertNotNull(opts.url,"No URL given");var ajaxParams={};$.each(["username","password","timeout"],function(i,key){if(opts[key]){ajaxParams[key]=opts[key];}});if(ajaxParams['username']&&ajaxParams['password']){if(window.btoa){ajaxParams.beforeSend=function(xhr){var tok=ajaxParams['username']+':'+ajaxParams['password'];xhr.setRequestHeader('Authorization',"Basic "+window.btoa(tok));};}
 ajaxParams.xhrFields={withCredentials:true};}
 if(extractMethod(request,opts)==="post"){$.extend(ajaxParams,POST_AJAX_PARAMS);ajaxParams.data=JSON.stringify(request);ajaxParams.url=ensureTrailingSlash(opts.url);}else{$.extend(ajaxParams,GET_AJAX_PARAMS);ajaxParams.dataType=opts.jsonp?"jsonp":"json";ajaxParams.url=opts.url+"/"+constructGetUrlPath(request);}
@@ -37,7 +37,7 @@ if(opts.jsonp&&method==="post"){throw new Error("Can not use JSONP with POST req
 return method;}
 function addProcessingParameters(url,opts){var sep=url.indexOf("?")>0?"&":"?";$.each(PROCESSING_PARAMS,function(i,key){if(opts[key]!=null){url+=sep+key+"="+opts[key];sep="&";}});return url;}
 function constructGetUrlPath(request){var type=request.type;assertNotNull(type,"No request type given for building a GET request");type=type.toLowerCase();var extractor=GET_URL_EXTRACTORS[type];assertNotNull(extractor,"Unknown request type "+type);var result=extractor(request);var parts=result.parts||[];var url=type;$.each(parts,function(i,v){url+="/"+Jolokia.escape(v)});if(result.path){url+=(result.path[0]=='/'?"":"/")+result.path;}
-console.log(url);return url;}
+return url;}
 function ensureTrailingSlash(url){return url.replace(/\/*$/,"/");}
 var GET_URL_EXTRACTORS={"read":function(request){if(request.attribute==null){return{parts:[request.mbean,'*'],path:request.path};}else{return{parts:[request.mbean,request.attribute],path:request.path};}},"write":function(request){return{parts:[request.mbean,request.attribute,valueToString(request.value)],path:request.path};},"exec":function(request){var ret=[request.mbean,request.operation];if(request.arguments&&request.arguments.length>0){$.each(request.arguments,function(index,value){ret.push(valueToString(value));});}
 return{parts:ret};},"version":function(){return{};},"search":function(request){return{parts:[request.mbean]};},"list":function(request){return{path:request.path};}};function valueToString(value){if(value==null){return"[null]";}
