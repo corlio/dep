@@ -57,6 +57,7 @@ References:
 jQuery
 ------
 
+$ wget -O js/jquery2.js http://code.jquery.com/jquery-2.2.4.min.js
 $ wget -O js/jquery.js http://code.jquery.com/jquery-3.3.1.min.js
 
 References:
