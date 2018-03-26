@@ -47,8 +47,8 @@ Source: http://www.flotcharts.org/downloads/flot-0.8.3.zip
 Jolokia
 -------
 
-$ wget -O js/jolokia.js https://github.com/rhuss/jolokia/releases/download/v1.3.7/jolokia-min.js
-$ wget -O js/jolokia-simple.js https://github.com/rhuss/jolokia/releases/download/v1.3.7/jolokia-simple-min.js
+$ wget -O js/jolokia.js https://github.com/rhuss/jolokia/releases/download/v1.5.0/jolokia-min.js
+$ wget -O js/jolokia-simple.js https://github.com/rhuss/jolokia/releases/download/v1.5.0/jolokia-simple-min.js
 
 References:
  - http://jolokia.org/
