@@ -44,6 +44,14 @@ References:
 
 Source: http://www.flotcharts.org/downloads/flot-0.8.3.zip
 
+JavaScript Cookie
+-----------------
+
+$ wget -O js/js.cookie.js https://github.com/js-cookie/js-cookie/releases/download/v2.2.0/js.cookie-2.2.0.min.js
+
+References:
+ - https://github.com/js-cookie/js-cookie
+
 Jolokia
 -------
 
