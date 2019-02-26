@@ -113,7 +113,7 @@ References:
 Normalize.css
 -------------
 
-$ wget -O css/normalize.css http://necolas.github.com/normalize.css/8.0.0/normalize.css
+$ wget -O css/normalize.css http://necolas.github.com/normalize.css/8.0.1/normalize.css
 
 References:
  - http://necolas.github.io/normalize.css/
